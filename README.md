@@ -38,6 +38,14 @@ cp .env.example .env
 
 本地 `.env` 不要提交到 Git。
 
+如果用手机访问 Mac 上的 H5 前端，需要把 Mac 局域网地址加入后端 `.env` 的 `CORS_ORIGINS`。示例：
+
+```bash
+CORS_ORIGINS=http://localhost:5173,http://localhost:5174,http://127.0.0.1:5173,http://127.0.0.1:5174,http://172.20.10.6:5173
+```
+
+修改后需要重启 `uvicorn`。
+
 ## 启动本地 PostgreSQL 和 Redis
 
 确保 Docker Desktop 已启动，然后执行：
