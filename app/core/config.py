@@ -13,6 +13,8 @@ class Settings(BaseSettings):
     debug: bool = True
 
     database_url: str = "postgresql+asyncpg://starcomm:starcomm@localhost:5432/starcomm"
+    sql_echo: bool = False
+    sql_echo_parameters: bool = False
     redis_url: str = "redis://localhost:6379/0"
 
     jwt_secret_key: str = Field(default="change-me-in-local-env")

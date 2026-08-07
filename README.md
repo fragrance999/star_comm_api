@@ -79,6 +79,17 @@ http://127.0.0.1:8000/health
 http://127.0.0.1:8000/docs
 ```
 
+## SQL 日志
+
+默认日志只显示 HTTP 访问记录。需要排查数据库执行语句时，在 `.env` 中开启：
+
+```bash
+SQL_ECHO=true
+SQL_ECHO_PARAMETERS=false
+```
+
+`SQL_ECHO_PARAMETERS=true` 会把绑定参数也写入日志，可能包含账号、token、密码哈希等敏感信息，生产环境谨慎开启。
+
 ## 第一阶段接口
 
 ```text
