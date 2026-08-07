@@ -224,6 +224,8 @@ __marimo__/
 # Star Comm local files
 .env.local
 .env.production
+Dockerfile
+deploy/production/docker-compose.yml
 
 # IDE local config
 .idea/
