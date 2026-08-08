@@ -21,3 +21,4 @@ class User(TimestampMixin, Base):
     last_login_at: Mapped[date | None] = mapped_column(Date, comment="最后登录日期")
 
     refresh_tokens = relationship("RefreshToken", back_populates="user", cascade="all, delete-orphan")
+    spirit = relationship("AiSpirit", back_populates="user", cascade="all, delete-orphan", uselist=False)

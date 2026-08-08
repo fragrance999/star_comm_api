@@ -1,6 +1,6 @@
 # star_comm_api
 
-星邻社后端代码仓库，第一阶段使用 FastAPI 搭建注册登录基础能力。
+星邻社后端代码仓库，已完成账户基础能力与第二阶段的星灵最小体验。
 
 ## 技术栈
 
@@ -100,6 +100,22 @@ POST /api/v1/auth/refresh
 POST /api/v1/auth/logout
 GET  /api/v1/users/me
 ```
+
+## 第二阶段：星灵最小体验
+
+```text
+GET   /api/v1/spirit
+POST  /api/v1/spirit
+PATCH /api/v1/spirit
+GET   /api/v1/spirit/sessions/{session_id}/messages
+POST  /api/v1/spirit/onboarding/messages/stream
+POST  /api/v1/spirit/chat/stream
+PATCH /api/v1/memories/{memory_id}
+POST  /api/v1/memories/{memory_id}/confirm
+POST  /api/v1/memories/{memory_id}/discard
+```
+
+流式接口返回 `text/event-stream`，事件包含 `message.start`、`message.delta`、`message.complete`、`memory.candidate` 与 `error`。设置 `DASHSCOPE_API_KEY` 后使用通义千问 DashScope；未设置时自动使用本地确定性回复，便于开发和测试。
 
 ## 注册示例
 

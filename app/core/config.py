@@ -24,6 +24,9 @@ class Settings(BaseSettings):
 
     register_mode: str = "INVITE_OPTIONAL"
     cors_origins: Annotated[list[str], NoDecode] = ["http://localhost:5173", "http://127.0.0.1:5173"]
+    dashscope_api_key: str = ""
+    dashscope_base_url: str = "https://dashscope.aliyuncs.com/compatible-mode/v1"
+    dashscope_model: str = "qwen3.7-plus"
 
     @field_validator("cors_origins", mode="before")
     @classmethod
