@@ -117,6 +117,8 @@ POST  /api/v1/memories/{memory_id}/discard
 
 流式接口返回 `text/event-stream`，事件包含 `message.start`、`message.delta`、`message.complete`、`memory.candidate` 与 `error`。设置 `DASHSCOPE_API_KEY` 后使用通义千问 DashScope；未设置时自动使用本地确定性回复，便于开发和测试。
 
+生产环境在部署使用的 `.env` 中设置 `DASHSCOPE_API_KEY`、`DASHSCOPE_BASE_URL` 与 `DASHSCOPE_MODEL`。可从 `deploy/production/.env.example` 创建该文件；真实密钥不可提交到 Git。
+
 ## 注册示例
 
 ```bash
